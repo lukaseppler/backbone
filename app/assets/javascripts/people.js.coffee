@@ -3,13 +3,14 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 class PersonModel extends Backbone.Model
-  url: "http://localhost:3000/people",
+  url: "http://localhost:3000/people/4",
   #name: "default name",
   #initialize: ->
   #  alert "hello again"
 
 
 a = new PersonModel({name: "Hans"})
+#a.fetch()
 #a.set({name: "my second name"})
 #a.name = "my second name";
 
