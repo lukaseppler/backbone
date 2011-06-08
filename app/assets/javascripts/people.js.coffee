@@ -2,27 +2,35 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-class PersonModel extends Backbone.Model
-  url: "http://localhost:3000/people/4",
+class Person extends Backbone.Model
+  #url: "/people/" + @id,
   #name: "default name",
   #initialize: ->
-  #  alert "hello again"
+  #  @people = new PersonCollection
+
+class PersonCollection extends Backbone.Collection
+  url: "/people",
+  model: Person
 
 
-a = new PersonModel({name: "Hans"})
+#a = new Person({name: "Hans"})
 #a.fetch()
 #a.set({name: "my second name"})
 #a.name = "my second name";
-
 #a.save()
 
-class PersonView extends Backbone.View
-  el:  ".my_id",
-  render: ->
-    template = ich.person(@model.attributes)
-    $(@el).append(template)
+window.c = new PersonCollection
+window.c.fetch()
+window.c.each (x) ->
+  alert x
 
-window.b = new PersonView({model: a})
-window.b.render()
-  
+#class PersonView extends Backbone.View
+#  el:  ".my_id",
+#  render: ->
+#    template = ich.person(@model.attributes)
+#    $(@el).append(template)
+
+#window.b = new PersonView({model: a})
+#window.b.render()
+
 
