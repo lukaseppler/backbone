@@ -2,4 +2,15 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-alert "hello world"
+class PersonView extends Backbone.Model
+  url: "http://localhost:3000/people",
+  name: "default name",
+  initialize: ->
+    alert "hello again"
+
+
+window.a = new PersonView
+
+a.set(name: "my second name")
+a.save()
+
