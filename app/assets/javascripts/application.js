@@ -9,5 +9,6 @@
 //= require_tree .
 
 //= require backbone
+//= require ICanHaz
 
 //= require people

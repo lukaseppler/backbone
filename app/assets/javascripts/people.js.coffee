@@ -4,23 +4,24 @@
 
 class PersonModel extends Backbone.Model
   url: "http://localhost:3000/people",
-  name: "default name" #,
+  #name: "default name",
   #initialize: ->
   #  alert "hello again"
 
 
-window.a = new PersonModel
+a = new PersonModel({name: "Hans"})
+#a.set({name: "my second name"})
+#a.name = "my second name";
 
-#a.set(name: "my second name")
 #a.save()
 
 class PersonView extends Backbone.View
   el:  ".my_id",
   render: ->
-    #template = Mustache.to_html("{{name}} spends {{name}}", {name:"my name"})
-    template = ich.person({name: "person 1"})
+    template = ich.person(@model.attributes)
     $(@el).append(template)
 
-window.b = new PersonView
+window.b = new PersonView({model: a})
+window.b.render()
   
 
