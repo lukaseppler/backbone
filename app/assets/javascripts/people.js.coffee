@@ -15,9 +15,11 @@ class PersonCollection extends Backbone.Collection
 
 $ ->
   collection = new PersonCollection
-  collection.fetch()
-  html = ich.people(collection)
-  $("body").append(html)
+  collection.fetch({
+    success: ->
+      html = ich.people(collection)
+      $("body").append(html)
+  })
 
 
 

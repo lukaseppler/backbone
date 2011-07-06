@@ -3,18 +3,16 @@
     %p.name
       {{ name }}
 
+%script#person_index.partial{:type => "text/html"}
+  %li
+    %p.name
+      {{name}}
+
 
 %script#people{:type => "text/html"}
   %ul
     {{#models}}
-    {{ name }}
+    {{#attributes}}
+    {{> person_index}}
+    {{/attributes}}
     {{/models}}
-
-%script#person_index{:type => "text/html"}
-  %li
-    %p.name
-      {{ name }}
-
-
-/.my_id
-
