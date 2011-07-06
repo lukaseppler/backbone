@@ -1,18 +1,14 @@
-%script#person_show{:type => "text/html"}
+%script#person_show{:type => "text/x-jquery-tmpl"}
   %li
     %p.name
-      {{ name }}
+      ${name}
 
-%script#person_index.partial{:type => "text/html"}
+%script#person_index{:type => "text/x-jquery-tmpl"}
   %li
     %p.name
-      {{name}}
+      ${attributes.name}
 
 
-%script#people{:type => "text/html"}
+%script#people{:type => "text/x-jquery-tmpl"}
   %ul
-    {{#models}}
-    {{#attributes}}
-    {{> person_index}}
-    {{/attributes}}
-    {{/models}}
+    {{tmpl(models) "#person_index"}}

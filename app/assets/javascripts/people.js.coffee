@@ -17,7 +17,7 @@ $ ->
   collection = new PersonCollection
   collection.fetch({
     success: ->
-      html = ich.people(collection)
+      html = $("#people").tmpl(collection)
       $("body").append(html)
   })
 

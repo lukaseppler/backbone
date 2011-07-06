@@ -7,6 +7,6 @@
 //= require underscore
 //= require jquery
 //= require jquery_ujs
+//= require jquery.tmpl
 //= require backbone
-//= require ICanHaz
-//= require_tree .
+//= require people
