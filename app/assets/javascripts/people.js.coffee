@@ -13,16 +13,30 @@ class PersonCollection extends Backbone.Collection
   model: Person
 
 
+$ ->
+  collection = new PersonCollection
+  collection.fetch()
+  html = ich.people(collection)
+  $("body").append(html)
+
+
+
+
+#collection.each (x) ->
+#  alert x
+
+
+
+
+
+
+
 #a = new Person({name: "Hans"})
 #a.fetch()
 #a.set({name: "my second name"})
 #a.name = "my second name";
 #a.save()
 
-window.c = new PersonCollection
-window.c.fetch()
-window.c.each (x) ->
-  alert x
 
 #class PersonView extends Backbone.View
 #  el:  ".my_id",

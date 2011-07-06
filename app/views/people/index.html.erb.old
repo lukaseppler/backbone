@@ -21,12 +21,3 @@
 <br />
 
 <%= link_to 'New Person', new_person_path %>
-
-
-<script id="person" type="text/html">
-  <li>
-    <p class="name">Hello I'm {{ name }}</p>
-  </li>
-</script>
-
-<div class="my_id"></div>

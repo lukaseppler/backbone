@@ -1,0 +1,20 @@
+%script#person_show{:type => "text/html"}
+  %li
+    %p.name
+      {{ name }}
+
+
+%script#people{:type => "text/html"}
+  %ul
+    {{#models}}
+    {{ name }}
+    {{/models}}
+
+%script#person_index{:type => "text/html"}
+  %li
+    %p.name
+      {{ name }}
+
+
+/.my_id
+
